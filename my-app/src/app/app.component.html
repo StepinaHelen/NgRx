@@ -1,6 +1,6 @@
 <div class="container">
-  <app-cars-form></app-cars-form>
+  <app-cars-form (addCar)="addCarHadler($event)"></app-cars-form>
   <div class="list-group mt-4">
-  <app-car *ngFor="let car of [1,2,3]"></app-car>
+  <app-car (delete)="onDeleteCar($event)" *ngFor="let car of cars" [carInfo]='car'></app-car>
 </div>
 </div>
