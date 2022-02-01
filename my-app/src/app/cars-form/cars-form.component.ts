@@ -2,7 +2,6 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { Car } from "../car.model";
 import * as moment from "moment";
 
-
 @Component({
     selector: "app-cars-form",
     templateUrl: "./cars-form.component.html",
@@ -12,12 +11,12 @@ export class CarsFormComponent implements OnInit {
     carName = "";
     carModel = "";
     id = 2;
-   @Output() addCar = new EventEmitter<Car>();
+    @Output() addCar = new EventEmitter<Car>();
     constructor() {}
 
-  ngOnInit(): void { }
-  
-  onAdd() {
+    ngOnInit(): void {}
+
+    onAdd() {
         if (this.carModel === "" || this.carName === "") {
             return;
         }
@@ -29,8 +28,8 @@ export class CarsFormComponent implements OnInit {
             false,
             this.id
         );
-      this.addCar.emit(car);
-      this.carModel=this.carName= ""
+        this.addCar.emit(car);
+        this.carModel = this.carName = "";
     }
     onLoad() {}
 }
