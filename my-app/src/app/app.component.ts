@@ -8,10 +8,7 @@ import { CarComponent } from "./car/car.component";
     styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-    cars: Car[] = [
-        new Car("Ford", "11.11.11", "Focus", false, 1),
-        new Car("Audi", "12.12.12", "A4", false, 2),
-    ];
+    cars: Car[] = [];
 
     addCarHadler(car: any) {
         this.cars.unshift(car);
